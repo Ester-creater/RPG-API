@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RpgApi.Models.Enuns;
 using RpgApi.Models;
+using System.CodeDom.Compiler;
 
 namespace RpgApi.Controllers
 {
@@ -38,36 +39,56 @@ namespace RpgApi.Controllers
         // nao pode separar, deixar juntinho com o public 
         [HttpGet("GetAll")]
         public IActionResult Get()
-          {
-             return Ok (personagens);
-          }  
+        {
+            return Ok(personagens);
+        }
 
         [HttpGet("{id}")]
         public IActionResult GetSingle(int id)
         {
-            return Ok (personagens.FirstOrDefault(pe => pe.Id == id));
+            return Ok(personagens.FirstOrDefault(pe => pe.Id == id));
 
 
         }
 
         [HttpPost]
-        public IActionResult AddPersonagem (Personagem novoPersonagem)
+        public IActionResult AddPersonagem(Personagem novoPersonagem)
         {
+            if (novoPersonagem.Inteligencia == 0)
+                return BadRequest("Inteligencia não pode ter valor igual a 0 (zero).");
+
+
             personagens.Add(novoPersonagem);
             return Ok(personagens);
         }
+        [HttpPut]
+        public IActionResult UpdatePersonagem(Personagem p)
+        {
+            Personagem personagemAlterado = personagens.Find(pers => pers.Id == p.Id);
+            personagemAlterado.Nome = p.Nome;
+            personagemAlterado.PontosVida = p.PontosVida;
+            personagemAlterado.Forca = p.Forca;
+            personagemAlterado.Defesa = p.Defesa;
+            personagemAlterado.Inteligencia = p.Inteligencia;
+            personagemAlterado.Classe = p.Classe;
 
+            return Ok(personagens);
+        }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            personagens.RemoveAll(Personagem => Personagem.Id == id);
 
+            return Ok(personagens);
+        }
 
-
-
-
-
-
-
-
-
+        [HttpGet("GetByNomeAproximado/{nome}")]
+        public IActionResult GetByNomeAproximado(string nome)
+        {
+            List<Personagem> listaBusca = personagens.FindAll(p => p.Nome.Contains(nome));
+            return Ok(listaBusca);
+        }
 
 
 

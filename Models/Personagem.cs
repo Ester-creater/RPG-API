@@ -22,4 +22,8 @@ namespace RpgApi.Models
 
         public ClasseEnum Classe { get; set; }
     }
+
+
+
+    
 }

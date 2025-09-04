@@ -1,0 +1,9 @@
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\RpgApi.exe
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\appsettings.Development.json
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\appsettings.json
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\RpgApi.dll
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\RpgApi.deps.json
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\RpgApi.runtimeconfig.json
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\RpgApi.pdb
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\Microsoft.AspNetCore.OpenApi.dll
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\Publicacao\Microsoft.OpenApi.dll

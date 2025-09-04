@@ -31,3 +31,4 @@ D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\obj\Debug\net9.0
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\obj\Debug\net9.0\RpgApi.pdb
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\obj\Debug\net9.0\RpgApi.genruntimeconfig.cache
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\obj\Debug\net9.0\ref\RpgApi.dll
+D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\obj\Debug\net9.0\RpgApi.sourcelink.json
