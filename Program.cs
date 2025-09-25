@@ -2,8 +2,17 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using RpgApi.Controllers;
 using RpgApi.Models;
+using Microsoft.EntityFrameworkCore;
+using RpgApi.Data;
+using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<DataContext>( options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoLocal"));
+});
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -35,7 +44,7 @@ app.MapGet("/weatherforecast", () =>
             summaries[Random.Shared.Next(summaries.Length)]
         ))
         .ToArray();
-    return forecast;
+    return forecast;  //vem ca nenem pros braços do papai!!
 })
 .WithName("GetWeatherForecast");
 app.MapControllers();
