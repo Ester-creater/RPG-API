@@ -22,12 +22,9 @@ namespace RpgApi.Data
         }
         //prop
         public DbSet<Personagem> TB_PERSONAGENS { get; set; }
-
         public DbSet<Arma> TB_ARMAS { get; set; }
-
-        public DbSet<Usuario> TB_USUARIOS { get; set; }
-    
-        public DbSet<Habilidade> TB_HABILIDADES { get; set;}
+        public DbSet<Usuario> TB_USUARIOS { get; set; }   
+        public DbSet<Habilidade> TB_HABILIDADES { get; set;}       
         public DbSet<PersonagemHabilidade> TB_PERSONAGENS_HABILIDADES { get; set; }
 
 
@@ -35,8 +32,10 @@ namespace RpgApi.Data
         {
 
             modelBuilder.Entity<Personagem>().ToTable("TB_PERSONAGENS");
-            modelBuilder.Entity<Personagem>().ToTable("TB_HABILIDADES");
+            modelBuilder.Entity<Habilidade>().ToTable("TB_HABILIDADES");
             modelBuilder.Entity<PersonagemHabilidade>().ToTable("TB_PERSONAGENS_HABILIDADES");
+             modelBuilder.Entity<Arma>().ToTable("TB_ARMAS");
+              modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
 
 
             modelBuilder.Entity<Personagem>().HasData
@@ -57,7 +56,6 @@ namespace RpgApi.Data
 
 
 
-            modelBuilder.Entity<Arma>().ToTable("TB_ARMAS");
 
             modelBuilder.Entity<Arma>().HasData
             (
@@ -125,7 +123,7 @@ namespace RpgApi.Data
 
 
 
-            modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
+           
 
             //Relacionamento One to Many (Um para muitos)
             modelBuilder.Entity<Usuario>()
