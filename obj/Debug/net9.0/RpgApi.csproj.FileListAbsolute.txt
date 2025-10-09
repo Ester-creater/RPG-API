@@ -170,3 +170,14 @@ D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\bin\Debug\net9.0
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\bin\Debug\net9.0\publish\RpgApi.deps.json
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\bin\Debug\net9.0\publish\RpgApi.runtimeconfig.json
 D:\2DS dudinha e heloisa\DS-I-Desenvolvimento de sistema\RpgApi\bin\Debug\net9.0\publish\RpgApi.staticwebassets.endpoints.json
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.csproj.AssemblyReference.cache
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.AssemblyInfoInputs.cache
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.AssemblyInfo.cs
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.csproj.CoreCompileInputs.cache
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.sourcelink.json
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.dll
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\refint\RpgApi.dll
+C:\Users\heloe\OneDrive\Desktop\2DS\DS-(Desenvovimento de Sistemas)\RPG-API\obj\Debug\net9.0\RpgApi.pdb

@@ -78,9 +78,14 @@ namespace RpgApi.Controllers
             try
             {
                 if(novaArma.Dano > 100)
-                {
                     throw new Exception("Danos não podem ser maior que 1.000");
-                }
+                
+                Personagem p = await _context.TB_PERSONAGENS
+                    .FirstOrDefaultAsync(p => p.Id == novaArma.PersonagemId);
+
+                if (p == null)
+                    throw new Exception("Não existe personagem com o Id informado");
+
                 _context.TB_ARMAS.Update(novaArma);
                 int linhasAfetadas = await _context.SaveChangesAsync();
 
