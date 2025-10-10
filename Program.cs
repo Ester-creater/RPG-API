@@ -4,7 +4,7 @@ using RpgApi.Controllers;
 using RpgApi.Models;
 using Microsoft.EntityFrameworkCore;
 using RpgApi.Data;
-using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
+//using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +18,12 @@ builder.Services.AddDbContext<DataContext>( options =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
+
+/* builder.Services.AddControllers(). AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = 
+  Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+  
+  deu erro
+  */
 
 var app = builder.Build();
 

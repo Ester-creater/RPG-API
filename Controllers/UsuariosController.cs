@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RpgApi.Data;
 using Microsoft.EntityFrameworkCore;
+using RpgApi.Models;
+using RpgApi.Utils;
 
 namespace RpgApi.Controllers
 {
+
+    [ApiController]
     [Route("[controller]")]
     public class UsuariosController : ControllerBase
     {
@@ -20,11 +24,7 @@ namespace RpgApi.Controllers
             _context = context;
         }
 
-
-
-
-
-        public IActionResult Index()
+        /*  public IActionResult Index()
         {
             return View();
         }
@@ -33,7 +33,7 @@ namespace RpgApi.Controllers
         public IActionResult Error()
         {
             return View("Error!");
-        }
+        }*/
 
 
         private async Task<bool> UsuarioExistente(string username)
@@ -73,7 +73,35 @@ namespace RpgApi.Controllers
             }
         }
 
+                [HttpPost("Autenticar")]
+        public async Task<IActionResult> AutenticarUsuario(Usuario credenciais)
+        {
+            try
+            {
+                Usuario? usuario = await _context.TB_USUARIOS
+                .FirstOrDefaultAsync(x => x.Username.ToLower().Equals(credenciais.Username.ToLower()));
 
+                if (usuario == null)
+                {
+                    throw new System.Exception("Usuário não encontrado.");
+                }
+                else if (!Criptografia
+                .VerificarPasswordHash(credenciais.PasswordString, usuario.PasswordHash, usuario.PasswordSalt))
+                {
+                    throw new System.Exception("Senha incorreta.");
+                }
+                else
+                {
+
+                    return Ok(usuario);
+                }
+            }
+            catch (System.Exception ex)
+            {
+                return BadRequest(ex.Message);
+
+            }
+        }
 
         
     }

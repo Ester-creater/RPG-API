@@ -3,51 +3,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RpgApi.Data;
+using RpgApi.Models;
 
-namespace RPG-API.Controllers
+namespace RpgApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+
     public class PersonagemHabilidadesController : ControllerBase
     {
-
         //Codificação geral dentro do corpo da controller.
         private readonly DataContext _context;
-
         public PersonagemHabilidadesController(DataContext context)
         {
             _context = context;
         }
 
-    }
 
-    [HttpPost]
+         [HttpPost]
         public async Task<IActionResult> AddPersonagemhabilidadesAsync(PersonagemHabilidade novoPersonagemHabilidade)
         {
             try
             {
                 Personagem personagem = await _context.TB_PERSONAGENS
                     .Include(p => p.Arma)
-                    .Include(p => p.PersonagemHabilidade).ThenInclude(ps => ps.Habilidade)
+                    .Include(p => p.personagemHabilidades).ThenInclude(ps => ps.Habilidade)
                     .FirstOrDefaultAsync(p => p.Id == novoPersonagemHabilidade.PersonagemId);
 
                 if (personagem == null)
                     throw new System.Exception("Personagem não encontrado para o Id Inforomado. ");
 
                 Habilidade habilidade = await _context.TB_HABILIDADES
-                                .FirstOrDefaultAsync(h => h.Id == novoPersonagemHabilidade.HabilidadeId);
+                     .FirstOrDefaultAsync(h => h.Id == novoPersonagemHabilidade.HabilidadeId);
 
                 if (habilidade == null)
                     throw new System.Exception("Habilidade não encontrada.");
 
                 PersonagemHabilidade ph = new PersonagemHabilidade();
-                ph.Persoangem = personagem;
+                ph.Personagem = personagem;
                 ph.Habilidade = habilidade;
                 await _context.TB_PERSONAGENS_HABILIDADES.AddAsync(ph);
-                int linhasAfetadas = await _context.saveChangesAsync();
+                int linhasAfetadas = await _context.SaveChangesAsync();
 
-                rreturn Ok(linhasAfetadas);
+                return Ok(linhasAfetadas);
 
             }
             catch (System.Exception ex)
@@ -59,4 +59,11 @@ namespace RPG-API.Controllers
 
 
 
+
+    }
+
+
+
+
 }
+
